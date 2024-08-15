@@ -60,7 +60,7 @@
 
 
 
-- 将yml命名为md2zhihu.yml, 设置gitee仓库地址: 按照本文第2小节保存的内容替换`asset_repo`地址的拥有者名字和仓库名字， 文件内容如下:
+- 将yml命名为md2zhihu.yml, 设置gitee仓库地址: 按照本文第2小节保存的内容替换`asset_repo`地址的拥有者名字和仓库名称， 文件内容如下:
 
 ```bash
 name: md2zhihu
@@ -130,9 +130,45 @@ jobs:
 
 - 在本地仓库文件夹下创建`_posts`文件夹，并将想要转换的md文件及图片文件夹放入其中
 
-  
+![image-20240815233112989](images/image-20240815233112989.png)
 
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDTy/3Oqj9nAga/IFW/OtvqJbT0p0ZH2jVOWFPwMAVyXh9fLGVSi/TnLD8WGdWJpTvbrt4ZowuleXKnmB6cf/Ma/CfmhhKCxDMZX5eiE3VvvSFV0gt7PcXgXetnNl0lfB/aEsWpDI6VLvmOoeRdb5cZJYLh04Dr+dCRb9TLRMTsNVt6JJWcykns1gadi5kx/6yxkCSvQzl5U4RAON91TRgDEEf7W4GG2QXGiJlTNJLw6McTjiTqTxokYVD/pDxCGH1IEsHE/+AwRi/8JGIltRcDl2eXNfLa3I5a6MbwHVBmVC+/COp9zX0MBk62vRJ6M3G7lyEqJEcfjX5qLuMmy7Q1hPaC+kPAhwAr13G+1uA565TB5Zt5SEQsJBzBO3ewiQ9DqSjJj1HC/YYXvjtTpBY76AeRcXpUXiACB/ZaawrCdyfZR0SaAFXkluB51EytSeWXQCGX6hXIuL3uyhoZ7Sq6pHiSQeLRGo5jZXyfoyF2s4IeOJe2hLTRtFGqvdWjFQM= 2642509545@qq.com
+- 更新本地文件仓库下所有文件`git add -A`
+- 提交此次更新`git commit -m “添加了目的转化md文件及引用本地图片文件”`
+- 推送更新到github仓库`git push -u origin main`		
+
+github仓库查看action状况
+
+![image-20240815233554294](images/image-20240815233554294.png)
+
+![image-20240815234336453](images/image-20240815234336453.png)
+
+
 
 ## 4. 获取生成后文件
+
+- 查看仓库分支
+
+![image-20240815234410892](images/image-20240815234410892.png)
+
+- 进入 `main-md2zhihu`分支 `_md2zhihu`文件夹
+
+![image-20240815234444400](images/image-20240815234444400.png)
+
+![image-20240815234525825](images/image-20240815234525825.png)
+
+- 以下就是转换出来的文件
+
+![image-20240815234557970](images/image-20240815234557970.png)
+
+- 点击文件，并点击下载按钮，下载到本地后，在知乎编辑器中以md文件方式导入
+
+![image-20240815234914598](images/image-20240815234914598.png)
+
+
+
+## 5. 后记
+
+每次在本地写完一篇新的文章， 只需要替换`_post`文件夹下内容，然后重新执行后续步骤即可
+
+
 
