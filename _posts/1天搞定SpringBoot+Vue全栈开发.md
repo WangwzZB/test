@@ -6,15 +6,12 @@
 
 ## 0.1 找不到org.springframework.boot 插件
 
-解决办法：安装maven helper 插件
+解决办法：安装maven helper 插件![image-20240817003313387](images/image-20240817003313387.png)z
 
 进入插件配置文件，复制版本号，并添加在pom.xml全局配置文件中
 
 ![image-20240816144706326](images/image-20240816144706326.png)
-
-![image-20240816144828224](images/image-20240816144828224.png)
-
-![image-20240816144837251](images/image-20240816144837251.png)
+![image-20240817003258592](images/image-20240817003258592.png)
 
 ## 0.2. META-INF目录作用
 
@@ -44,9 +41,7 @@
 - BS:(Browser/Server,浏览器/服务器架构模式)。
 - CS:(Client/Server,客户端/服务器架构模式)。
 
-![image-20240816145010130](images/image-20240816145010130.png)
-
-
+![image-20240817003353526](images/image-20240817003353526.png)
 
 - 架构对比
   - C/S架构主要特点是交互性强，具有安全访问模式，网络流量低，响应速度快因为客户端负责大多数业务逻辑和UI演示，所以也被称为胖客户端，C/S结构的软件需要针对不同的操作系统开发不同版本的软件。
@@ -57,7 +52,7 @@
 
 在BS架构下，客户端只需要浏览器，应用程序的逻辑和数据都存储在服务器端。浏览器只需要请求服务器，获取Web页面，并把Web页面展示给用户即可。
 
-![image-20240816145129397](images/image-20240816145129397.png)
+![image-20240817003407884](images/image-20240817003407884.png)
 
 ## 1.3  Java环境配置
 
@@ -65,11 +60,9 @@ https://www.oracle.com/java/technologies/downloads/#java8-windows
 
 ![image-20240816145155079](images/image-20240816145155079.png)
 
-![image-20240816145212800](images/image-20240816145212800.png)
+![image-20240817003457176](images/image-20240817003457176.png)
 
-![image-20240816145218362](images/image-20240816145218362.png)
-
-![image-20240816145224314](images/image-20240816145224314.png)
+![image-20240817003505429](images/image-20240817003505429.png)
 
 ## 1.4 IDEA开发环境
 
@@ -135,26 +128,24 @@ https://www.jetbrains.com/idea/download/#section=windows
 ## 2.2 快速创建SpringBoot应用
 ### 2.2.1 利用IDEA提供的Spring Initializr创建SpringBoot应用
 
-![image-20240816145909673](images/image-20240816145909673.png)
+![image-20240817003531257](images/image-20240817003531257.png)
 
 **pom.xml:**
 
-![image-20240816145915450](images/image-20240816145915450.png)
+![image-20240817003543068](images/image-20240817003543068.png)
 
-![image-20240816145928726](images/image-20240816145928726.png)
+![image-20240817003548979](images/image-20240817003548979.png)
 
 
 ### 2.2.2 第一个helloworld程序
 
 - 创建子目录controller: 后端项目需要接收浏览器的请求，使用控制器controller组件来接收浏览器请求
 
-![image-20240816150122810](images/image-20240816150122810.png)
-
-![image-20240816150126219](images/image-20240816150126219.png)
+![image-20240817003606152](images/image-20240817003606152.png)
 
 - 在目录controller中，创建HelloController.java文件
 
-![image-20240816150134467](images/image-20240816150134467.png)
+![image-20240817003614589](images/image-20240817003614589.png)
 
 ```java
 import org.springframework.web.bind.annotation.GetMapping;
@@ -178,13 +169,7 @@ public class HelloController {
 ```
 -  启动项目，在浏览器窗口中输`http://localhost:8080/hello`
 
-![image-20240816150232593](images/image-20240816150232593.png)
-
-![image-20240816150240874](images/image-20240816150240874.png)
-
-
-
-![image-20240816150249589](images/image-20240816150249589.png)
+![image-20240817003626772](images/image-20240817003626772.png)
 
 ### 2.2.3 开发环境的热部署
 - 在实际的项目开发调试过程中会频繁地修改后台类文件，导致需要重新编译、重新启动，整个过程非常麻烦，影响开发效率。
@@ -206,15 +191,13 @@ public class HelloController {
 </dependency>
 ```
 
-![image-20240816150632546](images/image-20240816150632546.png)
-
-![image-20240816150642110](images/image-20240816150642110.png)
+![image-20240817003642901](images/image-20240817003642901.png)
 
 - （ 3 ）在application.properties文件中配置devtools 设置属性文件的编码格式为utf- 8
 
 ![image-20240816204046989](images/image-20240816204046989.png)
 
-![image-20240816150650043](images/image-20240816150650043.png)
+![image-20240817003654550](images/image-20240817003654550.png)
 
 ``` java
 # 热部署生效
@@ -227,7 +210,7 @@ spring.devtools.restart.exclude=static
 -  （ 4 ）如果使用了Eclipse，那么在修改完代码并保存之后，项目将自动编译并触发重启，而如果使用了IntelliJ IDEA，还需要配置项目自动编译。
 - （ 5 ）打开Settings页面，在左边的菜单栏依次找到`Build,Execution,Deployment→Compile`，勾选`Build project automatically`
 
-![image-20240816150710936](images/image-20240816150710936.png)
+![image-20240817003702366](images/image-20240817003702366.png)
 
 -  （ 6 ）按Ctrl+Shift+Alt+/快捷键调出`Maintenance`页面，单击`Registry`，勾选`compiler.automake.allow.when.app.running`复选框。
 
@@ -261,7 +244,7 @@ server.port= 8080
 - Spring Boot提供了@Controller和@RestController两种注解来标识此类负责接收和处理HTTP请求。
 - 如果请求的是页面和数据，使用@Controller注解即可；如果只是请求数据，则可以使用@RestController注解。
 - MVC模式：M模型用于封装数据；Controller控制器用于继续协调和控制；View显示数据；
-![image-20240816151222055](images/image-20240816151222055.png)
+![image-20240817003723067](images/image-20240817003723067.png)
 **在前后端分离的项目中，通常不使用@Controller注解，而是使用@RestController，RestController注解的类只返回数据, 不涉及到页面的处理，因而适合前后端分离的项目**
 
 #### 3.1.2.1 @Controller 的用法
@@ -414,31 +397,31 @@ public class ParamsController {
 ## 3.4 Postman 工具测试
 ### 3.4.1 getTest2测试
 
-![image-20240816152839324](images/image-20240816152839324.png)
+![image-20240817003751586](images/image-20240817003751586.png)
 
 ### 3.4.2 getTest3测试
 
-![image-20240816152843226](images/image-20240816152843226.png)
+![image-20240817003758120](images/image-20240817003758120.png)
 
 ### 3.4.3 postTest1测试
 
-![image-20240816152855189](images/image-20240816152855189.png)
+![image-20240817003805431](images/image-20240817003805431.png)
 
 ### 3.4.4 postTest2测试
 
-![image-20240816152900533](images/image-20240816152900533.png)
+![image-20240817003814689](images/image-20240817003814689.png)
 
 ### 3.4.5 postTest3测试
 
-![image-20240816152907793](images/image-20240816152907793.png)
+![image-20240817003822406](images/image-20240817003822406.png)
 
 ### 3.4.6 postTest4测试
 
-![image-20240816152911338](images/image-20240816152911338.png)
+![image-20240817003828620](images/image-20240817003828620.png)
 
 ### 3.4.7 通配符测试
 
-![image-20240816152914768](images/image-20240816152914768.png)
+![image-20240817003835276](images/image-20240817003835276.png)
 
 
 # 4. Web开发进阶
@@ -450,7 +433,7 @@ public class ParamsController {
 - 使用IDEA创建Spring Boot项目，会默认创建出`classpath:/static/`目录，静态资源(网站上的图片，CSS样式等)一般放在这个目录下即可。（前后端分离的项目，此目录是没有文件）
 - 如果默认的静态资源过滤策略不能满足开发需求，也可以自定义静态资源过滤策略。在`application.properties`中直接定义过滤规则和静态资源位置：
 
-![image-20240816203941309](images/image-20240816203941309.png)
+![image-20240817003854113](images/image-20240817003854113.png)
 
 ![image-20240816153255960](images/image-20240816153255960.png)
 
@@ -833,9 +816,9 @@ spring.mvc.pathmatch.matching-strategy=ant_path_matcher
 
 - 启动项目访问 `http://127.0.0.1:8080/swagger-ui.html`，即可打开自动生成的可视化测试页面
 
-![image-20240816201941894](images/image-20240816201941894.png)
+![image-20240817003912775](images/image-20240817003912775.png)
 
-![image-20240816202051303](images/image-20240816202051303.png)
+![image-20240817003919615](images/image-20240817003919615.png)
 
 ### 5.3.6 Swagger常用注解
 
@@ -843,13 +826,11 @@ spring.mvc.pathmatch.matching-strategy=ant_path_matcher
 
 ![image-20240816201956112](images/image-20240816201956112.png)
 
-![image-20240816202000560](images/image-20240816202000560.png)
-
-![image-20240816202007940](images/image-20240816202007940.png)
+![image-20240817003941576](images/image-20240817003941576.png)
 
 - Swagger 有着跟ApiPost一样的功能用于接口调试
 
-![image-20240816202014046](images/image-20240816202014046.png)
+![image-20240817003949695](images/image-20240817003949695.png)
 
 ### 5.3.7 Springboot集成Swagger3
 
@@ -1153,17 +1134,17 @@ public class UserController {
 - （ 2 ）测试根据id获取用户数据
 ![image-20240816205615620](images/image-20240816205615620.png)
 - （ 3 ）测试添加用户
-<img src="images/image-20240816205648684.png" alt="image-20240816205648684" style="zoom:50%;" />、
+![image-20240817004008852](images/image-20240817004008852.png)、
 - 数据库表项查看：
-<img src="images/image-20240816205654661.png" alt="image-20240816205654661" style="zoom:50%;" />
+![image-20240817004016084](images/image-20240817004016084.png)
 - （ 4 ）测试更新用户
-<img src="images/image-20240816205708746.png" alt="image-20240816205708746" style="zoom:50%;" />
+![image-20240817004024828](images/image-20240817004024828.png)
 - 数据库表项查看：
 ![image-20240816205715686](images/image-20240816205715686.png)
 - （ 5 ）测试删除用户
-<img src="images/image-20240816205722205.png" alt="image-20240816205722205" style="zoom:50%;" />
+![image-20240817004051790](images/image-20240817004051790.png)
 - 数据库表项查看：
-<img src="images/image-20240816205725756.png" alt="image-20240816205725756" style="zoom:50%;" />
+![image-20240817004058298](images/image-20240817004058298.png)
 
 
 ## 6.4 MybatisPlus使用
@@ -1188,7 +1169,7 @@ public interface UserBaseMapper extends BaseMapper<User> {
 ```
 - Mybatis早期名字为ibatis, BaseMapper类是mybatisplus包提供的
 - BaseMapper类实现截图
-- <img src="images/image-20240816210038084.png" alt="image-20240816210038084" style="zoom:50%;" />
+- ![image-20240817004108903](images/image-20240817004108903.png)
 
 ### 6.4.2 MybatisPlus注解
 此注解用于实体类（例如User类），将该类的属性与数据库表之间的关系做注解
@@ -1198,7 +1179,7 @@ public interface UserBaseMapper extends BaseMapper<User> {
 
 ![image-20240816210244977](images/image-20240816210244977.png)
 
-<img src="images/image-20240816210249748.png" alt="image-20240816210249748" style="zoom:50%;" />
+![image-20240817004120692](images/image-20240817004120692.png)
 
 
 ### 6.4.3 MybatisPlus条件构造器`QueryWrapper`的使用
@@ -1219,7 +1200,7 @@ public List<User> findByUserName(String username){
 }
 ```
 
-<img src="images/image-20240816210305101.png" alt="image-20240816210305101" style="zoom:50%;" />
+![image-20240817004133749](images/image-20240817004133749.png)
 
 # 7. MyBatis多表查询及分页查询
 **本节内容**
@@ -1232,7 +1213,7 @@ public List<User> findByUserName(String username){
 - 实现复杂关系映射，可以使用`@Results`注解，`@Result`注解，`@One`注解，`@Many`注解组合完成复杂关系的配置。
 
 ### 7.1.1 准备工作
-<img src="images/image-20240816210656883.png" alt="image-20240816210656883" style="zoom:50%;" />
+![image-20240817004142030](images/image-20240817004142030.png)
 
 #### 7.1.1.1 修改数据库表名新增订单数据表
 ```bash
@@ -1512,13 +1493,13 @@ public class MyBatisPlusConfig {
 ## 8.3 Vue快速入门
 
 - **导入vue.js 的script 脚本文件**
-<img src="images/image-20240816212729713.png" alt="image-20240816212729713" style="zoom:50%;" />
+![image-20240817004209922](images/image-20240817004209922.png)
 
 - **在页面中声明一个将要被vue 所控制的DOM 区域（VUE视图、其实也就是HTML的标签或元素），既MVVM中的View**
-<img src="images/image-20240816212736310.png" alt="image-20240816212736310" style="zoom:50%;" />
+![image-20240817004216977](images/image-20240817004216977.png)
 
 - **创建vm 实例对象（vue 实例对象即ViewModel对象）**
-<img src="images/image-20240816212740614.png" alt="image-20240816212740614" style="zoom:50%;" />
+![image-20240817004223374](images/image-20240817004223374.png)
 
 ### 8.3.1 实践操作
 - （ 1 ）创建一个文件夹（demo）用于存储编辑的html目录，将目录拖拽到VScode中
@@ -2330,22 +2311,20 @@ export default {
 - 发送GET请求(对应`Springboot GetMapping`)
   - ○ .then,.catch是promise相关的语法
   
-  <img src="images/image-20240816224150169.png" alt="image-20240816224150169" style="zoom:50%;" />
-  
-  <img src="images/image-20240816224201290.png" alt="image-20240816224201290" style="zoom:50%;" />
+  ![image-20240817004334216](images/image-20240817004334216.png)
 - 发送POST请求（axios会自动把请求体里的数据转为JSON格式传递给后端）
 
-<img src="images/image-20240816224209328.png" alt="image-20240816224209328" style="zoom:50%;" />
+![image-20240817004344114](images/image-20240817004344114.png)
 
 - 其他请求方式参考：https://axios-http.com/zh/docs/req_config
 
-<img src="images/image-20240816224217594.png" alt="image-20240816224217594" style="zoom:50%;" />
+![image-20240817004349946](images/image-20240817004349946.png)
 
 - RESTful编程风格
 - get内是URL+配置项
 - post内是URL+请求体+配置项
 
-<img src="images/image-20240816224227381.png" alt="image-20240816224227381" style="zoom:50%;" />
+![image-20240817004356979](images/image-20240817004356979.png)
 
 
 ### 11.1.3 异步回调问题
@@ -2353,7 +2332,7 @@ export default {
 - 1.2得到的数据都是以异步的形式得到的，具体来说就是发送请求然后在.then()中传递一个回调函数，然后得到Response，不必等到Response返回后才继 续执行程序
 - 给发请求所在的方法前面加async，在发请求的函数前加await,这样就不需要.then()了，程序会等待拿到数据后，再继续执行
 - 常用的还是1.2的方式
-<img src="images/image-20240816224352334.png" alt="image-20240816224352334" style="zoom:50%;" />
+![image-20240817004408131](images/image-20240817004408131.png)
 
 
 ### 11.1.4 Axios网络请求定义位置
@@ -2480,7 +2459,7 @@ export default {
   - ○ 每次发请求都需要填写完整的请求路径
 - 可以通过全局配置的方式解决上述问题：
 
-<img src="images/image-20240816225122039.png" alt="image-20240816225122039" style="zoom:50%;" />
+![image-20240817004446052](images/image-20240817004446052.png)
 
 - 在`main.js`中添加
 
@@ -2567,7 +2546,7 @@ Vue.prototype.$http= axios
 
 ## 12.2 VueRouter基本使用
 - vue-router 是vue.js 官方给出的路由解决方案, 它只能结合vue 项目进行使用,能够轻松的管理SPA （单页应用程序）项目中组件的切换。例如网易云音乐的页面，每点一个连接就会切换一个组件显示
-![image-20240816225824067](images/image-20240816225824067.png)
+![image-20240817004459410](images/image-20240817004459410.png)
 - Vue适合做单页面项目，所有网页内容都是通过一个html来切换，此html通过不同的路由控制不同组件的显示（该控制需要vue-router）
 - Vue的单页面应用是基于路由和组件的，路由用于设定访问路径，并将路径和组件映射起来(访问不同的路径显示不同的组件)
 - vue-router 目前有3.x 的版本和4.x 的版本，vue-router 3.x 只能结合vue2 进行使用，vue-router 4.x 只能结合vue3 进行使用
@@ -2970,7 +2949,7 @@ const appB = createApp({
 }).mount('#app-b')
 ```
 
-<img src="images/image-20240816231449334.png" alt="image-20240816231449334" style="zoom:50%;" />
+![image-20240817004512100](images/image-20240817004512100.png)
 
 随着我们进一步扩展约定，即组件不允许直接变更属于store 实例的state，而应执行action 来分发(dispatch) 事件通知store 去改变，最终达成了 Flux架构。这样约定的好处是，能够记录所有store 中发生的state 变更，同时实现能做到记录变更、保存状态快照、历史回滚/时光旅行的先进的调试工具。
 
@@ -3019,7 +2998,7 @@ createApp(Counter).mount('#app')
 
 以下是一个表示“单向数据流”理念的简单示意：
 
-<img src="images/image-20240816231758836.png" alt="image-20240816231758836" style="zoom:50%;" />
+![image-20240817004525525](images/image-20240817004525525.png)
 
 但是，当我们的应用遇到 **多个组件共享状态** 时，单向数据流的简洁性很容易被破坏：
 - 多个视图依赖于同一状态。
@@ -3654,18 +3633,18 @@ store.registerModule(['nested', 'myModule'], {
 - Vuex中有 5 个重要的概念：State、Getter、Mutation、Action、Module。
 - 解释下图: State 通过vue数据视图绑定将数据渲染到Vue组件上-> Vue组件 如果发起了异步请求，就将请求发送到Action部分->Action将从后端得到的数据提交到`Mutations->Mutations`再修改State数据；如果没有异步的操作请求，可以直接让Vue组件commit(提交)Mutations更改State。
 
-<img src="images/image-20240816233923505.png" alt="image-20240816233923505" style="zoom:50%;" />
+![image-20240817004538436](images/image-20240817004538436.png)
 
 
 ### 13.9.1 State（一下内容基于vue3即基于vuex4）
 >State用于维护所有应用层的状态，并确保应用只有唯一的数据源 (把组件中需要共享的数据设置到state中)
 
-<img src="images/image-20240816233932387.png" alt="image-20240816233932387" style="zoom:50%;" />
+![image-20240817004546071](images/image-20240817004546071.png)
 
 
 - 在组件中，可以直接使用`this.$store.state.count`访问数据，也可以先用mapState辅助函数将其映射下来
 
-<img src="images/image-20240816233942747.png" alt="image-20240816233942747" style="zoom:50%;" />
+![image-20240817004554626](images/image-20240817004554626.png)
 
 
 ### 13.9.2 Getter
@@ -3675,42 +3654,42 @@ store.registerModule(['nested', 'myModule'], {
 素，就可以使用Getter
 - state.todos是一个数组，filter函数是JS关于数组的一个过滤函数
 
-<img src="images/image-20240816234238635.png" alt="image-20240816234238635" style="zoom:50%;" />
+![image-20240817004601173](images/image-20240817004601173.png)
 
-- 在组件中，可以直接使用this.$store.getters.doneTodos，也可以先用mapGetters辅助函数将其映射下来，代码如下：
+- 在组件中，可以直接使用`this.$store.getters.doneTodos`，也可以先用mapGetters辅助函数将其映射下来，代码如下：
 
-<img src="images/image-20240816234247736.png" alt="image-20240816234247736" style="zoom:50%;" />
+**![image-20240817004619520](images/image-20240817004619520.png)**
 
 
 ### 13.9.3 Mutation
 - Mutation提供修改State状态的方法。
 
-<img src="images/image-20240816234258446.png" alt="image-20240816234258446" style="zoom:50%;" />
+![image-20240817004626313](images/image-20240817004626313.png)
 
 - 在组件中，可以直接使用store.commit来提交mutation
 
-<img src="images/image-20240816234306747.png" alt="image-20240816234306747" style="zoom:50%;" />
+![image-20240817004631418](images/image-20240817004631418.png)
 
 - 也可以先用mapMutation辅助函数将其映射下来
 
-<img src="images/image-20240816234320752.png" alt="image-20240816234320752" style="zoom:50%;" />
+![image-20240817004639125](images/image-20240817004639125.png)
 
 ### 13.9.4 Action
 - Action类似Mutation，不同在于: Action不能直接修改状态，只能通过提交mutation来修改，Action可以包含异步操作
 - 这么做的目的是在下面的代码actions中记录状态的变化
 
-<img src="images/image-20240816234329241.png" alt="image-20240816234329241" style="zoom:50%;" />
+![image-20240817004647482](images/image-20240817004647482.png)
 
 - 在组件中，可以直接使用`this.$store.dispatch('xxx')`分发action，或者使用mapActions辅助函数先将其映射下来
 
-<img src="images/image-20240816234339871.png" alt="image-20240816234339871" style="zoom:50%;" />
+![image-20240817004655017](images/image-20240817004655017.png)
 
 ### 13.9.5 Module
 
 - 由于使用单一状态树，当项目的状态非常多时，store对象就会变得十分臃肿。因此，Vuex允许我们将store分割成模块（Module）
 - 每个模块拥有独立的State、Getter、Mutation和Action，模块之中还可以嵌套模块，每一级都有着相同的结构。
 
-<img src="images/image-20240816234352948.png" alt="image-20240816234352948" style="zoom:50%;" />
+![image-20240817004700112](images/image-20240817004700112.png)
 
 ### 13.9.6 总结
 - 作为一个状态管理器，首先要有保管状态的容器——State；
@@ -3725,9 +3704,9 @@ store.registerModule(['nested', 'myModule'], {
 
 ### 13.10.1 新建vue2 vuex-demo项目并安装vuex3(匹配vue 2 )
 
-<img src="images/image-20240816234403579.png" alt="image-20240816234403579" style="zoom:50%;" />
+![image-20240817004706585](images/image-20240817004706585.png)
 
-<img src="images/image-20240816234413496.png" alt="image-20240816234413496" style="zoom:50%;" />
+![image-20240817004714041](images/image-20240817004714041.png)
 
 ### 13.10.2 新建store目录（vuex数据存储的地方）
 
@@ -4124,7 +4103,7 @@ Mock.mock( { email: '@email'} )
 ```
 - Mock.Random 提供的完整方法（占位符）如下：
 
-<img src="images/image-20240816235819060.png" alt="image-20240816235819060" style="zoom:50%;" />
+![image-20240817004735118](images/image-20240817004735118.png)
 
 
 ### 14.4.1 Basic
@@ -4516,7 +4495,7 @@ Token 是在服务端产生的一串字符串,是客户端访问资源接口（A
 - 首先，需要指定一个密钥（secret）。这个密钥只有服务器才知道，不能泄露给用户
 - 然后，使用Header 里面指定的签名算法（默认是HMAC SHA256），按照下面的公式产生签名。
 
-![image-20240816222738524](images/image-20240816222738524.png)
+![image-20240817004820824](images/image-20240817004820824.png)
 
 #### 16.3.2 JWT使用
 
@@ -4537,11 +4516,11 @@ Token 是在服务端产生的一串字符串,是客户端访问资源接口（A
 
 -  生成Token
 
-![image-20240816222805367](images/image-20240816222805367.png)
+![image-20240817004758564](images/image-20240817004758564.png)
 
 -  解析Token
 
-![image-20240816222809329](images/image-20240816222809329.png)
+![image-20240817004808057](images/image-20240817004808057.png)
 
 
 
